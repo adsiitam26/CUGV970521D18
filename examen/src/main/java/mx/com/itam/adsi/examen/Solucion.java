@@ -1,11 +1,15 @@
 package mx.com.itam.adsi.examen;
 
+import org.apache.log4j.Logger;
+
 /**
  * Clase que despliega la solucion a una secuencia de nodos en consola.
  * @author Victor Cruz
  *
  */
 public class Solucion {
+	private final static Logger LOG = Logger.getLogger(Solucion.class);
+
 	/**
 	 * Instancia que construye una coleccion de nodos que están conextados
 	 * secuencialmente por medio de su propiedad next.
