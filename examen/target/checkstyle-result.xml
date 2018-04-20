@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.1.1">
+<file name="/home/daniel/eclipse-workspace/examen/src/main/java/mx/com/itam/adsi/examen/Solucion.java">
+<error line="9" column="1" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
+</file>
+<file name="/home/daniel/eclipse-workspace/examen/src/main/java/mx/com/itam/adsi/examen/Node.java">
+<error line="9" severity="error" message="Number of package methods is 2 (max allowed is 1)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodCountCheck"/>
+<error line="28" column="9" severity="error" message="File contains tab characters (this is the first instance)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
+</file>
+<file name="/home/daniel/eclipse-workspace/examen/src/main/resources/log4j.properties">
+</file>
+</checkstyle>
