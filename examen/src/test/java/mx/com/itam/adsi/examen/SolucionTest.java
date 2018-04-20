@@ -34,7 +34,43 @@ public class SolucionTest {
 
 	@Test
 	public void test() {
-		new Solucion().ok();
+		Solucion s = new Solucion();
+		s.ok();
+		
+		Node n1 = new Node("A");
+	    Node n2 = new Node("B");
+	    Node n3 = new Node("C");
+	    Node n4 = new Node("D");
+	    Node n5 = new Node("E");
+	    Node n6 = new Node("F");
+	    n1.setNext(n2);
+	    n2.setNext(n3);
+	    n3.setNext(n4);
+	    n4.setNext(n5);
+	    n5.setNext(n6);
+	    
+		assertTrue("Prueba A",check(n1.getData(), "A"));
+		assertTrue("Prueba A",!check(n1.getData(), "AC"));
+		assertTrue("Prueba A",check(n2.getData(), "B"));
+		assertTrue("Prueba A",!check(n2.getData(), "A"));
+		assertTrue("Prueba A",!check(n1.getData(), "C"));
+		assertTrue("Prueba A",check(n3.getData(), "C"));
+		assertTrue("Prueba A",!check(n3.getData(), "A"));
+		assertTrue("Prueba A",check(n4.getData(), "D"));
+		assertTrue("Prueba A",!check(n4.getData(), "A"));
+		assertTrue("Prueba A",check(n5.getData(), "E"));
+		assertTrue("Prueba A",!check(n5.getData(), "A"));
+		assertTrue("Prueba A",check(n6.getData(), "F"));
+		assertTrue("Prueba A",!check(n6.getData(), "A"));
+		assertTrue("Prueba A",check(n1.getNext().getData(), "B"));
+		assertTrue("Prueba A",check(n2.getNext().getData(), "C"));
+		assertTrue("Prueba A",check(n3.getNext().getData(), "D"));
+		assertTrue("Prueba A",check(n4.getNext().getData(), "E"));
+		assertTrue("Prueba A",check(n5.getNext().getData(), "F"));
+	}
+	
+	private boolean check(String res, String exp) {
+		return res.equals(exp);
 	}
 
 }

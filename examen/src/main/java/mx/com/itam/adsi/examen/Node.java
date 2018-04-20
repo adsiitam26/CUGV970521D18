@@ -1,5 +1,7 @@
 package mx.com.itam.adsi.examen;
 
+import org.apache.log4j.Logger;
+
 /**
  * Clase que forma nodos ligados unidireccionalmente, en el cual cada
  * uno contiene una cadena con un valor característico.
@@ -7,6 +9,7 @@ package mx.com.itam.adsi.examen;
  *
  */
 public class Node {
+	private final static Logger LOG = Logger.getLogger(Node.class);
     private String data;
     private Node next;
     
@@ -16,7 +19,9 @@ public class Node {
      * @param data Cadena que se asociara al nodo instanciado.
      */
     Node(String data) {
+    	LOG.info("Inicializando un nuevo nodo con "+data);
         this.data = data;
+        LOG.info("Terminó de crear el nodo");
     }
     
     /**
@@ -29,6 +34,7 @@ public class Node {
         	return this; // Cuando no hay mas nodos ligados a este objeto.
         }
         Node otro = next; // Obtenemos el nodo anidado.
+        LOG.info("Checamos si tiene conectado un nuevo nodo");
         next = null;
         Node tavo = otro.gus(); // Obtenemos el siguiente nodo de forma "inversa".
         otro.next = this;
@@ -40,6 +46,7 @@ public class Node {
      * @return El valor de data.
      */
     public String getData() {
+    	LOG.info("Obteniendo data");
 		return data;
 	}
 
@@ -49,6 +56,7 @@ public class Node {
      */
 	public void setData(String data) {
 		this.data = data;
+		LOG.info("El nuevo cambio de data, ahora es: "+data);
 	}
 
 	/**
@@ -56,6 +64,7 @@ public class Node {
      * @return El valor de next.
      */
 	public Node getNext() {
+		LOG.info("Obteniendo next");
 		return next;
 	}
 
@@ -65,6 +74,7 @@ public class Node {
      */
 	public void setNext(Node next) {
 		this.next = next;
+		LOG.info("El nuevo cambio de next, ahora es: "+next);
 	}
 
 	/**
@@ -86,6 +96,7 @@ public class Node {
         // Este método requiere sólo de 3 a 7 lineas de código para funcionar correctamente
     	String result = "";
     	Node actualNode = this;
+    	LOG.info("Observar que haya nuevos nodos");
     	while(actualNode!=null) {
     		result = actualNode.data+"-->"+result;
     		actualNode = actualNode.next;

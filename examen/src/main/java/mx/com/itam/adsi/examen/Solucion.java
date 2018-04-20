@@ -17,6 +17,7 @@ public class Solucion {
 	 * @return Node Regresa el primero que se creó.
 	 */
 	private Node build() {
+		LOG.info("Inicializando Construccion de nodos, de A a F");
 	    Node n1 = new Node("A");
 	    Node n2 = new Node("B");
 	    Node n3 = new Node("C");
@@ -28,6 +29,7 @@ public class Solucion {
 	    n3.setNext(n4);
 	    n4.setNext(n5);
 	    n5.setNext(n6);
+	    LOG.info("Terminó de hacer todas las conextiones entre nodos A a F");
 	    return n1;
 	}
 
@@ -35,22 +37,34 @@ public class Solucion {
      * Prueba la funcionalidad de el método "gus" con distintos casos de prueba.
      */
     public void ok() {
+    	LOG.info("Checando si todas las clases son correctas");
+    	LOG.info("Creamos un nodo a con build()");
         Node a = build();
         a.prn();
+        LOG.info("Creamos un nodo a con gus()");
         a = a.gus();
         a.prn();
+        LOG.info("Creamos un nodo a con gus()");
         a = a.gus();
         a.prn();
+        LOG.info("Creamos un nodo a con gus()");
+        LOG.info("Primera prueba con el metodo gus");
         
+        LOG.info("Instanceamos un nodo b");
         Node b = new Node("X");
         b = b.gus();
+        LOG.info("Creamos un nodo b con gus()");
         b.prn();
+        LOG.info("Segunda prueba con el metodo gus con una nueva Letra");
         
+        LOG.info("Instanceamos un nodo X y Y");
         Node c = new Node("X");
         Node d = new Node("Y");
         c.setNext(d);
         c = c.gus();
         c.prn();   
+        LOG.info("Creamos un nodo c con gus()");
+        LOG.info("Tercera prueba con el metodo gus con X y Y");
     }
 
     /**
